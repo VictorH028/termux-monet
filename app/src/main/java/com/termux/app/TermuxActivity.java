@@ -62,6 +62,7 @@ import com.termux.shared.termux.settings.properties.TermuxAppSharedProperties;
 import com.termux.shared.termux.theme.TermuxThemeUtils;
 import com.termux.shared.theme.NightMode;
 import com.termux.shared.view.ViewUtils;
+import com.termux.shared.view.KeyboardUtils;
 import com.termux.terminal.TerminalSession;
 import com.termux.terminal.TerminalSessionClient;
 import com.termux.view.TerminalView;
@@ -751,8 +752,10 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     public void onBackPressed() {
         if (getDrawer().isDrawerOpen(Gravity.RIGHT)) {
             getDrawer().closeDrawers();
-        } else if (!getDrawer().isDrawerOpen(Gravity.RIGHT)) {
-            getDrawer().openDrawer(Gravity.RIGHT);
+        //} else if (!getDrawer().isDrawerOpen(Gravity.RIGHT)) {
+            //getDrawer().openDrawer(Gravity.RIGHT);
+        } else {
+            finishActivityIfNotFinishing();
         }
     }
 
