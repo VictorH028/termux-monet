@@ -453,7 +453,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         view.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
     
-    private void configureBackgroundBlur(int blurViewId, int backgroundViewId, boolean isBlurEnabled, float alphaIfBlurred) {
+    private void configureBackgroundBlur(int blurViewId, int backgroundViewId, int sessionsColor, boolean isBlurEnabled, float alphaIfBlurred) {
         View blurView = findViewById(blurViewId);
         View backgroundView = findViewById(backgroundViewId);
         blurView.setVisibility(isBlurEnabled ? View.VISIBLE : View.GONE);
@@ -461,7 +461,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         backgroundView.setAlpha(isBlurEnabled ? alphaIfBlurred : 1.0f);
     }
     
-    private void configureExtraKeysBackground() {
+    private void configureExtraKeysBackground(int extraKeysColor) {
         View extraKeysBackground = findViewById(R.id.extrakeys_background);
         View extraKeysBackgroundBlur = findViewById(R.id.extrakeys_backgroundblur);
         boolean isToolbarToggled = mPreferences.toogleShowTerminalToolbar();
