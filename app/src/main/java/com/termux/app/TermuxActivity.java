@@ -29,7 +29,7 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ImageButton;
+//import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -87,6 +87,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A terminal emulator activity.
@@ -198,7 +199,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
      * The {@link TermuxActivity} is in an invalid state and must not be run.
      */
     private boolean mIsInvalidState;
-    
+
     public boolean isToolbarHidden = false;
 
     private int mNavBarHeight;
@@ -252,6 +253,20 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         setActivityTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux);
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.setScrimColor(0x00000000);
+
+        LinearLayout headerLayout = findViewById(R.id.drawer_header);
+        headerLayout.setOnLongClickListener(view -> {
+            openIncognitoChrome("https://github.com/JulioCj7");
+            return true; // Return true to indicate that the event is handled
+        });
+        MaterialButton changeBackgroundButton = findViewById(R.id.change_background_button);
+        changeBackgroundButton.setOnClickListener(view -> {
+            mTermuxBackgroundManager.setBackgroundImage();
+        });
+
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
@@ -312,6 +327,20 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         TermuxUtils.sendTermuxOpenedBroadcast(this);
         verifyRWPermission();
         verifyAndroid11ManageFiles();
+    }
+
+    private void openIncognitoChrome(String url) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setPackage("com.android.chrome");
+            intent.putExtra("com.android.browser.application_id", getPackageName());
+            intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
+            startActivity(intent);
+        } catch (Exception e) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        }
     }
 
     private void verifyRWPermission() {
@@ -379,7 +408,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     
         if (mPreferences.isTerminalMarginAdjustmentEnabled())
             addTermuxActivityRootViewGlobalLayoutListener();
-    
+
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        Map<String, String> colors = readColorsFromPropertiesFile(filePath);
+        int extraKeysColor = Color.parseColor(colors.get("extra-keys-background"));
+        int sessionsColor = Color.parseColor(colors.get("sessions-background"));
+
         configureViewVisibility(R.id.terminal_monetbackground, mPreferences.isMonetBackgroundEnabled());
         configureBackgroundBlur(R.id.sessions_backgroundblur, R.id.sessions_background, mPreferences.isSessionsBlurEnabled(), 0.5f);
         configureExtraKeysBackground();
@@ -417,6 +451,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         View blurView = findViewById(blurViewId);
         View backgroundView = findViewById(backgroundViewId);
         blurView.setVisibility(isBlurEnabled ? View.VISIBLE : View.GONE);
+        backgroundView.setBackgroundColor(sessionsColor);
         backgroundView.setAlpha(isBlurEnabled ? alphaIfBlurred : 1.0f);
     }
     
@@ -436,6 +471,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 extraKeysBackgroundBlur.setVisibility(View.GONE);
                 extraKeysBackground.setAlpha(1.0f);
             }
+            extraKeysBackground.setBackgroundColor(extraKeysColor);
             extraKeysBackground.setVisibility(View.VISIBLE);
         }
     }
@@ -680,7 +716,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
     private void setSettingsButtonView() {
-        ImageButton settingsButton = findViewById(R.id.settings_button);
+        View settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(v -> {
             ActivityUtils.startActivity(this, new Intent(this, SettingsActivity.class));
         });
