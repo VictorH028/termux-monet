@@ -397,16 +397,16 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     public void onStart() {
         super.onStart();
         Logger.logDebug(LOG_TAG, "onStart");
-    
+
         if (mIsInvalidState) return;
-    
+
         mIsVisible = true;
-    
+
         if (mTermuxTerminalSessionActivityClient != null)
             mTermuxTerminalSessionActivityClient.onStart();
         if (mTermuxTerminalViewClient != null)
             mTermuxTerminalViewClient.onStart();
-    
+
         if (mPreferences.isTerminalMarginAdjustmentEnabled())
             addTermuxActivityRootViewGlobalLayoutListener();
 
@@ -416,9 +416,9 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         int sessionsColor = Color.parseColor(colors.get("sessions-background"));
 
         configureViewVisibility(R.id.terminal_monetbackground, mPreferences.isMonetBackgroundEnabled());
-        configureBackgroundBlur(R.id.sessions_backgroundblur, R.id.sessions_background, mPreferences.isSessionsBlurEnabled(), 0.5f);
-        configureExtraKeysBackground();
-    
+        configureBackgroundBlur(R.id.sessions_backgroundblur, R.id.sessions_background, sessionsColor, mPreferences.isSessionsBlurEnabled(), 0.5f);
+        configureExtraKeysBackground(extraKeysColor);
+
         registerTermuxActivityBroadcastReceiver();
     }
 
@@ -433,10 +433,15 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         if (mTermuxTerminalViewClient != null)
             mTermuxTerminalViewClient.onResume();
 
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        Map<String, String> colors = readColorsFromPropertiesFile(filePath);
+        int extraKeysColor = Color.parseColor(colors.get("extra-keys-background"));
+        int sessionsColor = Color.parseColor(colors.get("sessions-background"));
+
         configureViewVisibility(R.id.terminal_monetbackground, mPreferences.isMonetBackgroundEnabled());
-        configureBackgroundBlur(R.id.sessions_backgroundblur, R.id.sessions_background, mPreferences.isSessionsBlurEnabled(), 0.5f);
-        configureExtraKeysBackground();
-        
+        configureBackgroundBlur(R.id.sessions_backgroundblur, R.id.sessions_background, sessionsColor, mPreferences.isSessionsBlurEnabled(), 0.5f);
+        configureExtraKeysBackground(extraKeysColor);
+
         // Check if a crash happened on last run of the app or if a plugin crashed and show a
         // notification with the crash details if it did
         TermuxCrashUtils.notifyAppCrashFromCrashLogFile(this, LOG_TAG);
