@@ -78,6 +78,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import java.util.Arrays;
 
+import android.graphics.Color;
+import android.widget.LinearLayout;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
 /**
  * A terminal emulator activity.
  * <p/>
@@ -317,6 +327,40 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             i.setData(Uri.fromParts("package", getPackageName(), null));
             startActivity(i);
         }
+    }
+
+    private Map<String, String> readColorsFromPropertiesFile(String filePath) {
+        Properties properties = new Properties();
+        Map<String, String> colors = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
+            properties.load(reader);
+
+            String extraKeysColor = properties.getProperty("extra-keys-background");
+            if (extraKeysColor == null) {
+                int colorRes = getResources().getColor(R.color.background_accent);
+                extraKeysColor = String.format("#%06X", (0xFFFFFF & colorRes));
+            } else {
+                extraKeysColor = extraKeysColor.trim();
+            }
+            colors.put("extra-keys-background", extraKeysColor);
+
+            String sessionsColor = properties.getProperty("sessions-background");
+            if (sessionsColor == null) {
+                int colorRes = getResources().getColor(R.color.background_accent);
+                sessionsColor = String.format("#%06X", (0xFFFFFF & colorRes));
+            } else {
+                sessionsColor = sessionsColor.trim();
+            }
+            colors.put("sessions-background", sessionsColor);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            int colorRes = getResources().getColor(R.color.background_accent);
+            String defaultColor = String.format("#%06X", (0xFFFFFF & colorRes));
+            colors.put("extra-keys-background", defaultColor);
+            colors.put("sessions-background", defaultColor);
+        }
+        return colors;
     }
 
     @Override
