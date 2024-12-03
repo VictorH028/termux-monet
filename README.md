@@ -32,15 +32,6 @@
 ## [Termux-Monet](https://github.com/HardcodedCat/termux-monet) is a unofficial, modified fork of [Termux](https://github.com/termux/termux-app), an Android terminal application and Linux environment, with Monet Theming Implementations and Community-made changes.
 This project is developed on my spare time, for me to learn more about Android development. Dont expect consistency, professionality or stability. 
 
-***
-<a href="https://hosted.weblate.org/engage/termux-monet/">
-<img src="https://hosted.weblate.org/widgets/termux-monet/-/multi-blue.svg" alt="Translation status" align="center"/>
-</a>
-
-#### Currently Using Weblate for Translations!
-Join us in https://hosted.weblate.org/engage/termux-monet/
-
-***
 ## MONET IS ONLY AVAILABLE ON `ANDROID 12+`!
 #### LOWER VERSIONS WILL DISPLAY A STATIC, BLACK AND WHITE MONET THEME
 
