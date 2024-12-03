@@ -1,14 +1,18 @@
+<!--
+upstream: https://github.com/Termux-Monet/termux-monet/releases/latest
+-->
+
 <p align="center">
   <img src="/art/logo_dark.png#gh-dark-mode-only">
   <img src="/art/logo_light.png#gh-light-mode-only">
 </p>
 
 <div align="center">
-  <a href="https://github.com/HardcodedCat/termux-monet/actions/workflows/debug_build.yml?query=branch%3Amaster">
-    <img src="https://img.shields.io/github/actions/workflow/status/HardcodedCat/termux-monet/debug_build.yml?branch=master&label=Build&logo=gradle"/>
+  <a href="https://github.com/Juliocj7/termux-monet/actions/workflows/debug_build.yml?query=branch%3Amaster">
+    <img src="https://img.shields.io/github/actions/workflow/status/Juliocj7/termux-monet/debug_build.yml?branch=master&label=Build&logo=gradle"/>
   </a>
-  <a href="https://github.com/HardcodedCat/termux-monet/actions/workflows/run_tests.yml?query=branch%3Amaster">
-    <img src="https://img.shields.io/github/actions/workflow/status/HardcodedCat/termux-monet/run_tests.yml?branch=master&label=Test&logo=gradle"/>
+  <a href="https://github.com/Juliocj7/termux-monet/actions/workflows/run_tests.yml?query=branch%3Amaster">
+    <img src="https://img.shields.io/github/actions/workflow/status/Juliocj7/termux-monet/run_tests.yml?branch=master&label=Test&logo=gradle"/>
   </a>
 </div>
 <br />
@@ -29,11 +33,11 @@
 
 ***
 
-## [Termux-Monet](https://github.com/HardcodedCat/termux-monet) is a unofficial, modified fork of [Termux](https://github.com/termux/termux-app), an Android terminal application and Linux environment, with Monet Theming Implementations and Community-made changes.
+### [Termux-Monet](https://github.com/HardcodedCat/termux-monet) is a unofficial, modified fork of [Termux](https://github.com/termux/termux-app), an Android terminal application and Linux environment, with Monet Theming Implementations and Community-made changes.
 This project is developed on my spare time, for me to learn more about Android development. Dont expect consistency, professionality or stability. 
 
-## MONET IS ONLY AVAILABLE ON `ANDROID 12+`!
-#### LOWER VERSIONS WILL DISPLAY A STATIC, BLACK AND WHITE MONET THEME
+### MONET IS ONLY AVAILABLE ON `ANDROID 12+`!
+### LOWER VERSIONS WILL DISPLAY A STATIC, BLACK AND WHITE MONET THEME
 
 ***
 
