@@ -43,12 +43,7 @@ Join us in https://hosted.weblate.org/engage/termux-monet/
 ***
 ## MONET IS ONLY AVAILABLE ON `ANDROID 12+`!
 #### LOWER VERSIONS WILL DISPLAY A STATIC, BLACK AND WHITE MONET THEME
-***
 
-# Termux-Monet can be updated by using [Obtainium](https://github.com/ImranR98/Obtainium)
-Here's a quick tutorial on how to add it to the app.
-
-![Uploadit](https://github.com/KitsunedFox/termux-monet/assets/103902727/bc2a236e-04ee-416c-a37c-d50c69e52b24)
 ***
 
 ## Contents
@@ -63,20 +58,6 @@ Here's a quick tutorial on how to add it to the app.
 - [Disclaimer](#Disclaimer)
 - [Forking Instructions](#Forking)
 - [Special Thanks](#Special-Thanks)
-***
-
-## Termux Monet and Plugins
-
-> The [Termux Monet](https://github.com/HardcodedCat/termux-monet) fork app comes with the following optional modified plugin apps:
->
-> **These are Modified Plugins. All these repos are Forks from termux-app**
-> - [Termux:Styling](https://github.com/HardcodedCat/termux-styling)
-> - [Termux:API](https://github.com/HardcodedCat/termux-api)
-> - [Termux:Boot](https://github.com/HardcodedCat/termux-boot)
-> - [Termux:Float](https://github.com/HardcodedCat/termux-float)
-> - [Termux:Tasker](https://github.com/HardcodedCat/termux-tasker)
-> - [Termux:Widget](https://github.com/HardcodedCat/termux-widget)
-> - [Termux:GUI](https://github.com/HardcodedCat/termux-gui)
 
 ***
 
