@@ -749,10 +749,10 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     @SuppressLint("RtlHardcoded")
     @Override
     public void onBackPressed() {
-        if (getDrawer().isDrawerOpen(Gravity.LEFT)) {
+        if (getDrawer().isDrawerOpen(Gravity.RIGHT)) {
             getDrawer().closeDrawers();
-        } else if (!getDrawer().isDrawerOpen(Gravity.LEFT)) {
-            getDrawer().openDrawer(Gravity.LEFT);
+        } else if (!getDrawer().isDrawerOpen(Gravity.RIGHT)) {
+            getDrawer().openDrawer(Gravity.RIGHT);
         }
     }
 
