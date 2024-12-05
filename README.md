@@ -1,5 +1,6 @@
 <!--
-upstream: https://github.com/Termux-Monet/termux-monet/releases/latest
+[!upstream]
+https://github.com/Termux-Monet/termux-monet/releases/latest
 -->
 
 <p align="center">
