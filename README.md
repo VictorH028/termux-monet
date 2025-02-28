@@ -28,8 +28,14 @@ https://github.com/Termux-Monet/termux-monet/releases/latest
 <br />
 
 <p align="center">
+  <!--
   <img src="/art/screenshot_dark.png#gh-dark-mode-only" height=50%>
   <img src="/art/screenshot_light.png#gh-light-mode-only" height=50%>
+  -->
+
+![1000539635](https://github.com/user-attachments/assets/ec3ad106-fde2-43e5-bda7-7963fd5f748c)
+![1000539637](https://github.com/user-attachments/assets/de03377b-1dd6-4c9e-ada7-8c43013f18d5)
+
 </p>
 
 ***
