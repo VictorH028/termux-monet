@@ -4,8 +4,8 @@ https://github.com/Termux-Monet/termux-monet/releases/latest
 -->
 
 <p align="center">
-  <img src="/art/logo_dark.png#gh-dark-mode-only">
-  <img src="/art/logo_light.png#gh-light-mode-only">
+  <img src="/art/logo_dark.svg#gh-dark-mode-only">
+  <img src="/art/logo_dark.svg#gh-light-mode-only">
 </p>
 
 <div align="center">
