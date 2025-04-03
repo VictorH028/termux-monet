@@ -260,7 +260,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
         LinearLayout headerLayout = findViewById(R.id.drawer_header);
         headerLayout.setOnLongClickListener(view -> {
-            openIncognitoChrome("https://github.com/JulioCj7");
+            openIncognitoChrome("https://github.com/VictorH028");
             return true; // Return true to indicate that the event is handled
         });
         MaterialButton changeBackgroundButton = findViewById(R.id.change_background_button);
