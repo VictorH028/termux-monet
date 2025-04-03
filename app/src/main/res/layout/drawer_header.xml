@@ -31,7 +31,7 @@
                 android:id="@+id/drawer_header_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="JulioCj7"
+                android:text="𝕯𝖊𝖒𝖔𝖓 𝕳𝖚𝖓𝖙𝖊𝖗"
                 android:textColor="@color/menu_accent"
                 android:textSize="18sp" />
 
@@ -39,9 +39,11 @@
                 android:id="@+id/drawer_header_alias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SimplyTheBest"
+                android:text="HackerDeSombreroRojo "
+                android:textStyle="bold|italic" 
                 android:textColor="@color/menu_accent"
-                android:textSize="12sp" />
+                android:textSize="12sp" 
+                android:typeface="serif"/>
         </LinearLayout>
     </LinearLayout>
     <!--
