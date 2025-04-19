@@ -200,24 +200,31 @@ final class TermuxInstaller {
                         throw new RuntimeException("Moving termux prefix staging to prefix directory failed");
                     }
 
-                    // Run Termux bootstrap second stage
-                    Logger.logInfo(LOG_TAG, "Running Termux bootstrap second stage.");
+                    // Run Termux bootstrap second stage.
                     String termuxBootstrapSecondStageFile = TERMUX_PREFIX_DIR_PATH + "/etc/termux/bootstrap/termux-bootstrap-second-stage.sh";
-                    if (FileUtils.fileExists(termuxBootstrapSecondStageFile, false)) {
+                    if (!FileUtils.fileExists(termuxBootstrapSecondStageFile, false)) {
+                        Logger.logInfo(LOG_TAG, "Not running Termux bootstrap second stage since script not found at \"" + termuxBootstrapSecondStageFile + "\" path.");
+                    } else {
+                        if (!FileUtils.fileExists(TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH + "/bash", true)) {
+                            Logger.logInfo(LOG_TAG, "Not running Termux bootstrap second stage since bash not found.");
+                        }
+                        Logger.logInfo(LOG_TAG, "Running Termux bootstrap second stage.");
+
                         ExecutionCommand executionCommand = new ExecutionCommand(-1,
                                 termuxBootstrapSecondStageFile, null, null,
                                 null, ExecutionCommand.Runner.APP_SHELL.getName(), false);
                         executionCommand.commandLabel = "Termux Bootstrap Second Stage Command";
                         executionCommand.backgroundCustomLogLevel = Logger.LOG_LEVEL_NORMAL;
                         AppShell appShell = AppShell.execute(activity, executionCommand, null, new TermuxShellEnvironment(), null, true);
-                        boolean stderrSet = !executionCommand.resultData.stderr.toString().isEmpty();
-                        if (appShell == null || !executionCommand.isSuccessful() || executionCommand.resultData.exitCode != 0 || stderrSet) {
-                            // Delete prefix directory as otherwise when app is restarted, the broken prefix directory would be used and logged into
+                        if (appShell == null || !executionCommand.isSuccessful() || executionCommand.resultData.exitCode != 0) {
+                            // Generate debug report before deleting broken prefix directory to get `stat` info at time of failure.
+                            showBootstrapErrorDialog(activity, whenDone, MarkdownUtils.getMarkdownCodeForString(executionCommand.toString(), true));
+
+                            // Delete prefix directory as otherwise when app is restarted, the broken prefix directory would be used and logged into.
+                            Logger.logInfo(LOG_TAG, "Deleting broken termux prefix.");
                             error = FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
                             if (error != null)
                                 Logger.logErrorExtended(LOG_TAG, error.toString());
-
-                            showBootstrapErrorDialog(activity, whenDone, MarkdownUtils.getMarkdownCodeForString(executionCommand.toString(), true));
                             return;
                         }
                     }
