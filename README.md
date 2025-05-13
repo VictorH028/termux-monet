@@ -33,9 +33,20 @@ https://github.com/Termux-Monet/termux-monet/releases/latest
   <img src="/art/screenshot_light.png#gh-light-mode-only" height=50%>
   -->
 
-[![1000539635](https://github.com/user-attachments/assets/ec3ad106-fde2-43e5-bda7-7963fd5f748c)](#---)
-[![1000570725](https://github.com/user-attachments/assets/7e149417-0c98-458a-9c02-bd74a8a7478e)](#---)
-[![1000539637](https://github.com/user-attachments/assets/de03377b-1dd6-4c9e-ada7-8c43013f18d5)](#---)
+|`𝚜𝚑𝚒𝚗𝚎`|
+|:----------:|
+|[![1000602550](https://github.com/user-attachments/assets/7145f8d0-1d3a-4fcc-9e0d-3e8d1cf6ad3a)](#---)|
+|[![1000602552](https://github.com/user-attachments/assets/84542a24-dd66-440f-89e3-640b2c17a97d)](#---)|
+
+|`𝚛𝚎𝚖𝚒𝚡`|
+|:----------:|
+|[![1000602668](https://github.com/user-attachments/assets/4a3deb84-a380-4814-b05f-5d079aebfc64)](#---)|
+|[![1000602670](https://github.com/user-attachments/assets/24853174-585d-4576-98dd-3f4279b034cc)](#---)|
+
+***
+
+> [!IMPORTANT]
+> > </sub> ¡ 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝚌𝚘𝚖𝚒𝚗𝚐 𝚜𝙾𝙾𝚗 !</sub>
 
 </p>
 
