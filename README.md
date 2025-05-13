@@ -35,13 +35,13 @@ https://github.com/Termux-Monet/termux-monet/releases/latest
 
 |`𝚜𝚑𝚒𝚗𝚎`|
 |:----------:|
-|[![1000602550](https://github.com/user-attachments/assets/7145f8d0-1d3a-4fcc-9e0d-3e8d1cf6ad3a)](#---)|
-|[![1000602552](https://github.com/user-attachments/assets/84542a24-dd66-440f-89e3-640b2c17a97d)](#---)|
+|[![termux-shine-01](https://github.com/user-attachments/assets/7abce288-ec7b-497e-ac44-7debcf43c535)](#---)|
+|[![termux-shine-02](https://github.com/user-attachments/assets/81d9c91d-7d4b-4a43-8a40-861a6bb30941)](#---)|
 
 |`𝚛𝚎𝚖𝚒𝚡`|
 |:----------:|
-|[![1000602668](https://github.com/user-attachments/assets/4a3deb84-a380-4814-b05f-5d079aebfc64)](#---)|
-|[![1000602670](https://github.com/user-attachments/assets/24853174-585d-4576-98dd-3f4279b034cc)](#---)|
+|[![termux-remix-01](https://github.com/user-attachments/assets/723d6875-19e5-43dd-b86f-b403213505fa)](#---)|
+|[![termux-remix-02](https://github.com/user-attachments/assets/08394937-702a-45a1-8117-fe64110cbf0c)](#---)|
 
 ***
 
