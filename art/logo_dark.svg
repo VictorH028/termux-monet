@@ -2,8 +2,8 @@
 <svg viewBox="0 0 2048 525" width="1920" height="493" xmlns="http://www.w3.org/2000/svg">
 <defs>
     <linearGradient id="cyanmagentagradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#00d7ff; stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#00d7ff; stop-opacity:1" />
+        <stop offset="0%" style="stop-color:#5fd7ff; stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#5fd7ff; stop-opacity:1" />
     </linearGradient>
 </defs>
 <g fill="url(#cyanmagentagradient)">
